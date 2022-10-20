@@ -22,6 +22,20 @@ export function Comments({ signed }: props) {
 		}
 	}
 
+	const detectEnter = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
+		i++
+		if (event.key === "Enter" && !event.shiftKey) {
+			event.preventDefault();
+			const input = document.querySelector<HTMLTextAreaElement>('textarea')
+			if (input) {
+				const cmt = input.value
+				input.value = ""
+				setUserComments(userComments =>
+					[...userComments, cmt])
+			}
+		}
+	}
+
 	let commentSection = userComments.map(userComment => <p key={i}>{userComment}</p>)
 
 	return (
@@ -29,6 +43,7 @@ export function Comments({ signed }: props) {
 			{commentSection}
 			<form onSubmit={handleSubmit}>
 				<textarea
+					onKeyPress={detectEnter}
 					className="mb-5 flex flex-col border-2 border-black p-2 w-[50vw] h-48"
 					name="comment"
 					placeholder={signed ?
@@ -44,5 +59,4 @@ export function Comments({ signed }: props) {
 		</div>
 	)
 }
-
 

@@ -15,7 +15,7 @@ export function Users() {
 	const disabledButtonCls = "bg-gray-400 border-2 border-black p-1 w-44"
 
 	return (
-		<div className="m-10 flex flex-col">
+		<div className="m-10 flex flex-col items-center">
 			{userState ? "Welcome, user! 👋" : "You are not signed in 🙁"}
 			<div className="flex flex-row gap-5">
 
