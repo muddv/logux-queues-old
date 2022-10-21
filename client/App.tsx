@@ -2,7 +2,6 @@ import { CrossTabClient, log } from '@logux/client'
 import { ClientContext, ChannelErrors } from '@logux/client/react'
 
 import { SUBPROTOCOL } from '../protocol/protocol'
-import { Comments } from './comments/Comments'
 import { Users } from './users/Users'
 
 const UID = '10'
@@ -25,7 +24,7 @@ function App() {
 	return (
 		<ClientContext.Provider value={CLIENT}>
 			<ChannelErrors AccessDenied={Page403} NotFound={Page404} Error={Page500}>
-					<Users />
+					<Users userId={UID} />
 			</ChannelErrors>
 		</ClientContext.Provider>
 	)

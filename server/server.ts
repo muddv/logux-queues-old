@@ -1,6 +1,6 @@
 import { Server } from '@logux/server'
 
-import { SUBPROTOCOL } from '../protocol/protocol'
+import { SUBPROTOCOL } from '../protocol/protocol.js'
 
 const SERVER = new Server(
 	Server.loadOptions(process, {
