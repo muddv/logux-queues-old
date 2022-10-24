@@ -24,7 +24,7 @@ export function Comments({ userId, signed }: props) {
 		createSyncMap(client, Comment, {
 			id: nanoid(),
 			userId: userId,
-			creatorId: users.list[users.list.length - 1].id,
+			creatorId: users.list[0].id,
 			text: cmt
 		})
 	}

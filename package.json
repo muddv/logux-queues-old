@@ -10,9 +10,9 @@
     "server": "tsc --project ./server/tsconfig.json && node ./server/server.js"
   },
   "dependencies": {
+    "@logux/core": "muddv/core#test",
     "@logux/actions": "^0.3.0",
     "@logux/client": "^0.18.2",
-    "@logux/core": "^0.8.0",
     "@logux/server": "^0.12.2",
     "@nanostores/react": "^0.4.0",
     "nanodelay": "^2.0.2",
